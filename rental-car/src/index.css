@@ -1,0 +1,56 @@
+@import 'modern-normalize/modern-normalize.css';
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	color: #242a37;
+	background-color: #f6f7fb;
+}
+
+html,
+body {
+	width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: 0;
+}
+
+ul,
+ol {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+address {
+	font-style: normal;
+}
+
+button {
+	cursor: pointer;
+	padding: 0;
+	line-height: 0;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	object-fit: contain;
+}
+
+.container {
+	max-width: 1232px;
+	padding: 0 16px;
+	margin: 0 auto;
+}
