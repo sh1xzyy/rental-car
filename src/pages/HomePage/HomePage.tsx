@@ -1,7 +1,8 @@
 import type { FC } from 'react'
+import Hero from '../../components/Hero/Hero'
 
 const HomePage: FC = () => {
-	return <div>HomePage</div>
+	return <Hero />
 }
 
 export default HomePage

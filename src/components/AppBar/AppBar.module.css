@@ -1,0 +1,39 @@
+.header {
+	border-bottom: 1px solid #f2f4f7;
+	background-color: #f2f4f7;
+}
+
+.nav {
+	display: flex;
+	justify-content: space-between;
+}
+
+.logo {
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 1.2;
+	padding: 24px 0;
+	color: #101828;
+	span {
+		color: #3470ff;
+	}
+}
+
+.navList {
+	display: flex;
+	column-gap: 32px;
+}
+
+.navLink {
+	display: block;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 1.25;
+	padding: 24px 0;
+	color: #101828;
+	transition: color 250ms linear;
+}
+
+.active {
+	color: #0b44cd;
+}

@@ -6,10 +6,12 @@ const DetailsPage = lazy(() => import('../../pages/DetailsPage/DetailsPage'))
 import './App.css'
 
 import Loader from '../Loader/Loader'
+import Layout from '../Layout/Layout'
 
 function App() {
 	return (
 		<>
+			<Layout />
 			<Suspense fallback={<Loader />}>
 				<Routes>
 					<Route path='/' element={<HomePage />} />
