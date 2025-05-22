@@ -10,10 +10,10 @@ import { Toaster } from 'react-hot-toast'
 createRoot(document.getElementById('root') as HTMLElement).render(
 	<Provider store={store}>
 		<BrowserRouter>
-			{/* <StrictMode> */}
-			<App />
-			<Toaster />
-			{/* </StrictMode> */}
+			<StrictMode>
+				<App />
+				<Toaster />
+			</StrictMode>
 		</BrowserRouter>
 	</Provider>
 )
