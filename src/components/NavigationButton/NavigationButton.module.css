@@ -1,5 +1,7 @@
-.viewButton {
+.viewButton,
+.readButton {
 	display: inline-block;
+	text-align: center;
 	min-width: 276px;
 	padding: 12px 0;
 	font-weight: 600;
@@ -13,4 +15,8 @@
 	&:hover {
 		background-color: #0b44cd;
 	}
+}
+
+.readButton {
+	margin-top: 28px;
 }

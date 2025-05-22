@@ -1,0 +1,5 @@
+.carList {
+	display: grid;
+	grid-template-columns: repeat(4, 276px);
+	gap: 32px;
+}

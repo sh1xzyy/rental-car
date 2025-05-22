@@ -3,8 +3,6 @@ import { lazy, Suspense } from 'react'
 const HomePage = lazy(() => import('../../pages/HomePage/HomePage'))
 const CatalogPage = lazy(() => import('../../pages/CatalogPage/CatalogPage'))
 const DetailsPage = lazy(() => import('../../pages/DetailsPage/DetailsPage'))
-import './App.css'
-
 import Loader from '../Loader/Loader'
 import Layout from '../Layout/Layout'
 

@@ -46,11 +46,5 @@ button {
 img {
 	display: block;
 	max-width: 100%;
-	object-fit: contain;
-}
-
-.container {
-	max-width: 1232px;
-	padding: 0 16px;
-	margin: 0 auto;
+	object-fit: cover;
 }

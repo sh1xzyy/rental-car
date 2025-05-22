@@ -1,14 +1,16 @@
-import type { FC } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import s from './AppBar.module.css'
+import type { FC } from 'react'
 import clsx from 'clsx'
+import Container from '../Container/Container'
+import s from './AppBar.module.css'
 
 const AppBar: FC = () => {
 	const setActive = ({ isActive }: { isActive: boolean }) =>
 		clsx(s.navLink, isActive && s.active)
+
 	return (
 		<header className={s.header}>
-			<div className='container'>
+			<Container>
 				<nav className={s.nav}>
 					<Link className={s.logo} to='/'>
 						Rental<span>Car</span>
@@ -26,7 +28,7 @@ const AppBar: FC = () => {
 						</li>
 					</ul>
 				</nav>
-			</div>
+			</Container>
 		</header>
 	)
 }

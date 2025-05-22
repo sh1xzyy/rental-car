@@ -1,0 +1,40 @@
+.searchForm {
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	column-gap: 16px;
+}
+
+.fieldsWrapper {
+	display: flex;
+	column-gap: 16px;
+}
+
+.fieldLabel {
+	display: block;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 1.33;
+	color: #8d929a;
+	margin-bottom: 8px;
+}
+
+.fieldWrapper {
+	position: relative;
+}
+
+.rangeFieldsWrapper {
+	display: flex;
+}
+
+.fieldPrefix {
+	pointer-events: none;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 1.25;
+	color: #101828;
+	position: absolute;
+	left: 24px;
+	top: 50%;
+	transform: translateY(-50%);
+}

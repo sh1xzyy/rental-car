@@ -1,0 +1,36 @@
+/* Search Button */
+.searchButton {
+	height: 44px;
+	min-width: 156px;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 1.25;
+	color: #fff;
+	border: none;
+	border-radius: 12px;
+	background-color: #3470ff;
+	transition: background-color 250ms linear;
+	&:hover {
+		background-color: #0b44cd;
+	}
+}
+
+/* LoadMoreButton */
+.loadMoreButton {
+	display: block;
+	margin: 0 auto;
+	margin-top: 80px;
+	min-width: 156px;
+	height: 44px;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 1.25;
+	color: #101828;
+	border: 1px solid #3470ff;
+	border-radius: 12px;
+	background-color: transparent;
+	transition: border 250ms linear;
+	&:hover {
+		border: 1px solid #0b44cd;
+	}
+}

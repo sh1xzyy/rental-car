@@ -3,12 +3,12 @@
 	height: 700px;
 	max-width: 1440px;
 	margin: 0 auto;
-	background: url('/hero-img@1x.jpg');
+	background: url('/hero/hero-img@1x.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 }
 
-.heroDescription {
+.textWrapper {
 	text-align: center;
 }
 

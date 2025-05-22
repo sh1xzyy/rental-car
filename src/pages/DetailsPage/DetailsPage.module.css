@@ -1,0 +1,17 @@
+.detailsWrapper {
+	display: grid;
+	grid-template-columns: 640px 488px;
+	column-gap: 72px;
+}
+
+.leftSide {
+	display: flex;
+	flex-direction: column;
+	row-gap: 40px;
+}
+
+.infoWrapper {
+	display: flex;
+	flex-direction: column;
+	row-gap: 110px;
+}
