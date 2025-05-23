@@ -46,9 +46,8 @@ const carsSlice = createSlice({
 				} else {
 					state.cars.push(...action.payload.cars)
 				}
-
-				state.totalPages = action.payload.totalPages
 				state.isLoading = false
+				state.totalPages = action.payload.totalPages
 			})
 
 			.addMatcher(

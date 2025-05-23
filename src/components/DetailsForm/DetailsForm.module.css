@@ -1,0 +1,53 @@
+.formWrapper {
+	padding: 32px;
+	border: 1px solid #dadde1;
+	border-radius: 10px;
+}
+
+.descriptionWrapper {
+	margin-bottom: 24px;
+}
+
+.title {
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 1.2;
+	color: #101828;
+	margin-bottom: 8px;
+}
+
+.description {
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 1.25;
+	color: #8d929a;
+}
+
+.fieldsWrapper {
+	display: flex;
+	flex-direction: column;
+	row-gap: 16px;
+	margin-bottom: 24px;
+}
+
+.fieldWrapper {
+	position: relative;
+}
+
+.submitButton {
+	display: block;
+	margin: 0 auto;
+	min-width: 156px;
+	height: 44px;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 1.25;
+	color: #fff;
+	border: none;
+	border-radius: 12px;
+	background-color: #3470ff;
+	transition: background-color 250ms linear;
+	&:hover {
+		background-color: #0b44cd;
+	}
+}

@@ -6,4 +6,5 @@ export interface FormFieldProps {
 	min?: string
 	placeholder?: string
 	errorMsg?: boolean
+	title?: string
 }

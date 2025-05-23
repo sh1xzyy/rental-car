@@ -3,15 +3,15 @@ import { useSelector } from 'react-redux'
 import { type FC } from 'react'
 import type { initCatalogSearchTools } from '../../interfaces/CatalogPage/CatalogSearchTools/initCatalogSearchTools'
 import { validationSchema } from '../../utils/catalogSearchTools/validationSchema'
+import FormattedMileageInput from '../FormattedMileageInput/FormattedMileageInput'
 import { initialValues } from '../../utils/catalogSearchTools/initialValues'
 import CustomSelector from '../CustomSelector/CustomSelector'
 import { selectIsLoading } from '../../redux/cars/selector'
+import { useSearchCars } from '../../hooks/useSearchCars'
 import ActionButton from '../ActionButton/ActionButton'
 import s from './CatalogSearchTools.module.css'
-import FormField from '../FormField/FormField'
 import ErrorMsg from '../ErrorMsg/ErrorMsg'
 import Loader from '../Loader/Loader'
-import { useSearchCars } from '../../hooks/useSearchCars'
 
 const CatalogSearchTools: FC = () => {
 	const { searchCars } = useSearchCars()
@@ -21,11 +21,8 @@ const CatalogSearchTools: FC = () => {
 		query: initCatalogSearchTools,
 		actions: FormikHelpers<initCatalogSearchTools>
 	) => {
-		try {
-			await searchCars(query)
-		} catch (error) {
-			actions.resetForm()
-		}
+		await searchCars(query)
+		actions.resetForm()
 	}
 
 	return (
@@ -47,6 +44,8 @@ const CatalogSearchTools: FC = () => {
 										name='brand'
 										value={values.brand}
 										setFieldValue={setFieldValue}
+										width='204px'
+										height='272px'
 									/>
 									<ErrorMsg name='brand' />
 								</label>
@@ -59,6 +58,8 @@ const CatalogSearchTools: FC = () => {
 										name='rentalPrice'
 										value={values.rentalPrice}
 										setFieldValue={setFieldValue}
+										width='196px'
+										height='188px'
 									/>
 									<ErrorMsg name='rentalPrice' />
 								</label>
@@ -68,21 +69,19 @@ const CatalogSearchTools: FC = () => {
 								<div className={s.rangeFieldsWrapper}>
 									<div className={s.fieldWrapper}>
 										<span className={s.fieldPrefix}>From</span>
-										<FormField
-											className='rangeFieldFrom'
-											type='number'
+										<FormattedMileageInput
 											name='minMileage'
-											min='1'
+											className='rangeFieldFrom'
 										/>
+										<ErrorMsg name='minMileage' />
 									</div>
 									<div className={s.fieldWrapper}>
 										<span className={s.fieldPrefix}>To</span>
-										<FormField
-											className='rangeFieldTo'
-											type='number'
+										<FormattedMileageInput
 											name='maxMileage'
-											min='1'
+											className='rangeFieldTo'
 										/>
+										<ErrorMsg name='maxMileage' />
 									</div>
 								</div>
 							</label>

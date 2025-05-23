@@ -12,7 +12,7 @@ export const useLoadMore = () => {
 				getCarsByQueryThunk({ page: page.toString(), replace: false })
 			).unwrap()
 		} catch (error) {
-			toast.error('Something went wrong')
+			toast.error(`Sorry, we couldn't load car information.`)
 		}
 	}
 	return { loadMore }

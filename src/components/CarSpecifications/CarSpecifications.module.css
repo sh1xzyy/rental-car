@@ -1,0 +1,14 @@
+.title {
+	margin-bottom: 20px;
+}
+
+.specificationsList {
+	display: flex;
+	flex-direction: column;
+	row-gap: 16px;
+}
+
+.specificationItem {
+	display: flex;
+	column-gap: 8px;
+}

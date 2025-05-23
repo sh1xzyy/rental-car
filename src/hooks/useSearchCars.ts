@@ -18,7 +18,7 @@ export const useSearchCars = () => {
 			await dispatch(getCarsByQueryThunk({ ...query, replace: true })).unwrap()
 			setSearchParams(filteredParams)
 		} catch (error) {
-			toast.error('Sorry, nothing was found for your request.')
+			toast.error('No results found. Try a different search')
 		}
 	}
 	return { searchCars }

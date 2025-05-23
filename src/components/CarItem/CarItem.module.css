@@ -8,14 +8,27 @@
 	margin-bottom: 16px;
 }
 
-.favoriteIcon {
-	cursor: pointer;
+.favoriteButton {
 	position: absolute;
 	top: 16px;
 	right: 16px;
-	width: 16px;
-	height: 16px;
-	color: #f2f4f7;
+	border: none;
+	line-height: 0;
+	padding: 0;
+	background-color: transparent;
+}
+
+.favoriteIcon {
+	stroke-width: 3px;
+	stroke: #f2f4f7;
+	fill: none;
+}
+
+.favoriteSelected {
+	stroke-width: 1px;
+	stroke: #3470ff;
+	fill: #3470ff;
+	transition: stroke 250ms linear;
 }
 
 .headerWrapper {
@@ -42,7 +55,7 @@
 }
 
 .infoWrapper {
-	max-width: 225px;
+	max-width: 250px;
 	display: flex;
 	flex-wrap: wrap;
 	column-gap: 12px;
@@ -52,7 +65,7 @@
 	color: #8d929a;
 	span {
 		position: relative;
-		&::after {
+		&:not(:last-child)::after {
 			position: absolute;
 			content: '';
 			height: 100%;

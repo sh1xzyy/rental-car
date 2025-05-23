@@ -1,0 +1,26 @@
+.rangeFieldFrom,
+.rangeFieldTo {
+	height: 44px;
+	width: 160px;
+	border: none;
+	outline: transparent;
+	background-color: #f7f7f7;
+	transition: outline 500ms linear;
+	&:hover {
+		outline: 1px solid #3470ff;
+	}
+	&:focus {
+		outline: 1px solid #0b44cd;
+	}
+}
+
+.rangeFieldFrom {
+	padding-left: 65px;
+	border-right: 1px solid #dadde1;
+	border-radius: 12px 0 0 12px;
+}
+
+.rangeFieldTo {
+	padding-left: 45px;
+	border-radius: 0 12px 12px 0;
+}

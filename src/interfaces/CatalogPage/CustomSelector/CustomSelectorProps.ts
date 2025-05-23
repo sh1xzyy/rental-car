@@ -3,4 +3,6 @@ export interface CustomSelectorProps {
 	name: string
 	value: string
 	setFieldValue: (field: string, value: string) => void
+	width: string
+	height: string
 }

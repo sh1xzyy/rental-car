@@ -13,6 +13,7 @@ const FormField: FC<FormFieldProps> = ({
 	min,
 	placeholder,
 	errorMsg = true,
+	title,
 }) => {
 	const fieldId = nanoid()
 
@@ -27,6 +28,7 @@ const FormField: FC<FormFieldProps> = ({
 				min={min}
 				id={fieldId}
 				placeholder={placeholder}
+				title={title}
 			/>
 			{errorMsg && <ErrorMsg name={name} />}
 		</>

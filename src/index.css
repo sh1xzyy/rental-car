@@ -48,3 +48,22 @@ img {
 	max-width: 100%;
 	object-fit: cover;
 }
+
+label {
+	display: block;
+}
+
+::-webkit-scrollbar {
+	height: 8px;
+	width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 12px;
+	background-color: #dadde1;
+}
+
+::-webkit-scrollbar-track {
+	border-radius: 12px;
+	background-color: transparent;
+}
