@@ -1,54 +1,69 @@
-# React + TypeScript + Vite
+# 🚗 Rental Car App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to **Rental Car App** - a modern and responsive web application for browsing and exploring cars. Built with **React**, **TypeScript**, **HTML**, **CSS**, and **JavaScript**, this app lets you view, filter, and get detailed information about cars in a sleek and user-friendly interface.
 
-Currently, two official plugins are available:
+**Live Demo**: [rental-car-ten-ebon.vercel.app](https://rental-car-ten-ebon.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 🏠 Home Page
+- Simple landing page with a short introduction.
+- Includes a car image to set the visual theme.
+- Navigation to the car catalog.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### 🚘 Car Catalog
+- 🔟 Displays a list of 10 cars at a time.
+- ➕ **Load More** button fetches additional cars until the list ends.
+- ❤️ **Add to Favorites** to save the cars you like.
+- 🧰 **Filter Form** at the top:
+  - Brand  
+  - Model  
+  - Mileage (**from** or **to**, only one can be selected)
+- 📄 **Read More** button on each car opens a detailed view.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 📄 Car Details Page
+- 🖼️ Large image of the selected car.
+- 📝 Full description with specifications.
+- ✉️ Contact form with a simulated 1-second submission delay.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 📱 Responsive Design
+- Fully **responsive and adaptive** layout:
+  - Mobile phones  
+  - Tablets  
+  - Desktop devices  
+- Built using mobile-first best practices.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+---
+
+## 🛠 Tech Stack
+
+- **React**
+- **TypeScript**
+- **JavaScript**
+- **HTML**
+- **CSS**
+
+---
+
+## 📚 Libraries Used
+
+- Axios
+- Redux
+- DatePicker
+- NumberFormat
+- Select
+- RouterDom
+- Clsx
+
+---
+
+## 🔧 Future Improvements
+
+- 🔄 Infinite scroll or better pagination.  
+- 💾 Save favorites using local storage or backend.  
+- 🧑‍💻 Admin form to submit new cars.  
+- ✅ Better validation and UX for the contact form.
+
+---
