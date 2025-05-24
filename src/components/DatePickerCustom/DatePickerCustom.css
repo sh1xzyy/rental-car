@@ -6,6 +6,13 @@
 	max-width: 252px;
 }
 
+.react-datepicker__month {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	margin: 12px 0;
+}
+
 .react-datepicker-popper .react-datepicker__triangle {
 	stroke: #3470ff;
 }
@@ -106,5 +113,5 @@
 }
 
 .disabled-date {
-	pointer-events: none;
+	cursor: not-allowed;
 }

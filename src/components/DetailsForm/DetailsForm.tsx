@@ -7,6 +7,7 @@ import DatePickerCustom from '../DatePickerCustom/DatePickerCustom'
 import FormField from '../FormField/FormField'
 import s from './DetailsForm.module.css'
 import Loader from '../Loader/Loader'
+import ActionButton from '../ActionButton/ActionButton'
 
 const DetailsForm: FC = () => {
 	const [hasUserPickedDate, setHasUserPickedDate] = useState(false)
@@ -25,9 +26,7 @@ const DetailsForm: FC = () => {
 	) => {
 		setIsLoading(true)
 		setTimeout(() => {
-			toast.success(
-				'Your rental request was successful! We will contact you shortly to confirm the details.'
-			)
+			toast.success('Your rental request was successful!')
 			setIsLoading(false)
 		}, 1000)
 		actions.resetForm()
@@ -89,9 +88,7 @@ const DetailsForm: FC = () => {
 								/>
 							</div>
 						</div>
-						<button className={s.submitButton} type='submit'>
-							Send
-						</button>
+						<ActionButton className='submitButton' type='submit' title='Send' />
 					</Form>
 				</Formik>
 			</div>

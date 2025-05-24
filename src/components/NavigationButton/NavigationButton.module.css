@@ -1,9 +1,10 @@
+/* View and read Buttons */
 .viewButton,
 .readButton {
 	display: inline-block;
+	height: 44px;
+	padding: 12px;
 	text-align: center;
-	min-width: 276px;
-	padding: 12px 0;
 	font-weight: 600;
 	font-size: 16px;
 	line-height: 1.25;
@@ -19,4 +20,52 @@
 
 .readButton {
 	margin-top: 28px;
+	min-width: 100%;
+}
+
+.viewButton {
+	min-width: 276px;
+}
+
+@media screen and (min-width: 768px) {
+	.readButton {
+		padding: 12px 135px;
+	}
+}
+
+@media screen and (min-width: 1232px) {
+	.readButton {
+		padding: 12px 97px;
+	}
+}
+
+/* Go Home */
+.goHomeButton {
+	font-weight: 600;
+	padding: 12px 0;
+	min-width: 140px;
+	text-align: center;
+	border-radius: 8px;
+	color: #fff;
+	background-color: #3470ff;
+	transition: background-color 250ms linear;
+	&:hover {
+		background-color: #0b44cd;
+	}
+}
+
+/* Go Back */
+.goBackButton {
+	position: absolute;
+	top: 30px;
+	padding: 6px 0;
+	min-width: 60px;
+	text-align: center;
+	border: none;
+	border-radius: 12px;
+	background-color: #3470ff;
+	transition: background-color 250ms linear;
+	&:hover {
+		background-color: #0b44cd;
+	}
 }

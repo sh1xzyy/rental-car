@@ -1,20 +1,27 @@
 import { IoLocationOutline } from 'react-icons/io5'
 import type { FC } from 'react'
 import type { CarDetailsProps } from '../../interfaces/DetailsPage/CarDetailsProps/CarDetailsProps'
-import { milagePrettier } from '../../utils/carItem/mileagePrettier'
-import s from './CarDetails.module.css'
 import { selectingAddress } from '../../utils/carItem/selectingAddress'
+import { milagePrettier } from '../../utils/carItem/mileagePrettier'
+import { idPrettier } from '../../utils/carItem/idPrettier'
+import s from './CarDetails.module.css'
 
 const CarDetails: FC<CarDetailsProps> = ({ carDetails }) => {
 	if (!carDetails) return null
 
-	const { address, year, model, brand, description, mileage, rentalPrice } =
+	const { id, address, year, model, brand, description, mileage, rentalPrice } =
 		carDetails
 	return (
 		<div className={s.detailsWrapper}>
-			<span className={s.title}>
-				{brand} {model}, {year}
-			</span>
+			<div className={s.basicInfoWrapper}>
+				<span className={s.title}>
+					{brand} {model}, {year}
+				</span>
+				<span className={s.id}>
+					Id:
+					{idPrettier(id)}
+				</span>
+			</div>
 			<div className={s.infoWrapper}>
 				<span className={s.location}>
 					<IoLocationOutline /> {selectingAddress(address, 3)},{' '}

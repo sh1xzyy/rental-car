@@ -1,8 +1,9 @@
 import DatePicker, { registerLocale } from 'react-datepicker'
-import 'react-datepicker/dist/react-datepicker.css'
-import { enUS } from 'date-fns/locale/en-US'
 import type { FC } from 'react'
 import type { DatePickerCustomProps } from '../../interfaces/DetailsPage/DatePickerCustom/DatePickerCustomProps'
+import { isBeforeToday } from '../../utils/datePicker/isBeforeToday'
+import { customLocale } from '../../utils/datePicker/customLocale'
+import 'react-datepicker/dist/react-datepicker.css'
 import s from './DatePickerCover.module.css'
 import './DatePickerCustom.css'
 
@@ -11,30 +12,10 @@ const DatePickerCustom: FC<DatePickerCustomProps> = ({
 	hasUserPickedDate,
 	handleDateChange,
 }) => {
-	const customDayNames = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT']
-
-	const customLocale = {
-		...enUS,
-		localize: {
-			...enUS.localize,
-			day: (n: number) => customDayNames[n],
-		},
-		options: {
-			...enUS.options,
-			weekStartsOn: 1,
-		} as const,
-	}
-	registerLocale('custom-en', customLocale)
-
 	const today = new Date()
 	today.setHours(0, 0, 0, 0)
 
-	const isBeforeToday = (date: Date) => {
-		const compareDate = new Date(date)
-		compareDate.setHours(0, 0, 0, 0)
-		return compareDate < today
-	}
-
+	registerLocale('custom-en', customLocale)
 	return (
 		<>
 			<DatePicker
@@ -51,7 +32,7 @@ const DatePickerCustom: FC<DatePickerCustomProps> = ({
 				title='dd/mm/yyyy'
 				minDate={today}
 				dayClassName={(date: Date) =>
-					isBeforeToday(date) ? 'disabled-date' : ''
+					isBeforeToday(date, today) ? 'disabled-date' : ''
 				}
 			/>
 		</>

@@ -1,7 +1,7 @@
 .rangeFieldFrom,
 .rangeFieldTo {
 	height: 44px;
-	width: 160px;
+	width: 100%;
 	border: none;
 	outline: transparent;
 	background-color: #f7f7f7;
@@ -16,11 +16,25 @@
 
 .rangeFieldFrom {
 	padding-left: 65px;
-	border-right: 1px solid #dadde1;
-	border-radius: 12px 0 0 12px;
+	border-radius: 12px;
 }
 
 .rangeFieldTo {
 	padding-left: 45px;
-	border-radius: 0 12px 12px 0;
+	border-radius: 12px;
+}
+
+@media screen and (min-width: 768px) {
+	.rangeFieldFrom,
+	.rangeFieldTo {
+		width: 160px;
+	}
+	.rangeFieldFrom {
+		border-right: 1px solid #dadde1;
+		border-radius: 12px 0 0 12px;
+	}
+
+	.rangeFieldTo {
+		border-radius: 0 12px 12px 0;
+	}
 }

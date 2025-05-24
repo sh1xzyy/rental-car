@@ -1,5 +1,5 @@
 .formWrapper {
-	padding: 32px;
+	padding: 20px;
 	border: 1px solid #dadde1;
 	border-radius: 10px;
 }
@@ -34,20 +34,8 @@
 	position: relative;
 }
 
-.submitButton {
-	display: block;
-	margin: 0 auto;
-	min-width: 156px;
-	height: 44px;
-	font-weight: 600;
-	font-size: 16px;
-	line-height: 1.25;
-	color: #fff;
-	border: none;
-	border-radius: 12px;
-	background-color: #3470ff;
-	transition: background-color 250ms linear;
-	&:hover {
-		background-color: #0b44cd;
+@media screen and (min-width: 768px) {
+	.formWrapper {
+		padding: 32px;
 	}
 }

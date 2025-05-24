@@ -1,4 +1,6 @@
 .header {
+	display: block;
+	min-width: 100%;
 	border-bottom: 1px solid #f2f4f7;
 	background-color: #f2f4f7;
 }
@@ -32,6 +34,9 @@
 	padding: 24px 0;
 	color: #101828;
 	transition: color 250ms linear;
+	&:hover {
+		color: #0b44cd;
+	}
 }
 
 .active {

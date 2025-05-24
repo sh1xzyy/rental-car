@@ -1,6 +1,6 @@
 import type { FC } from 'react'
-import s from './Hero.module.css'
 import MainButton from '../NavigationButton/NavigationButton'
+import s from './Hero.module.css'
 
 const Hero: FC = () => {
 	return (
@@ -10,7 +10,7 @@ const Hero: FC = () => {
 				<p className={s.description}>
 					Reliable and budget-friendly rentals for any journey
 				</p>
-				<MainButton to='/catalog' title='View Catalog' />
+				<MainButton to='/catalog' className='viewButton' title='View Catalog' />
 			</div>
 		</div>
 	)

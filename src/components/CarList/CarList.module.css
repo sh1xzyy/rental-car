@@ -1,6 +1,18 @@
 .carList {
 	display: grid;
-	grid-template-columns: repeat(4, 276px);
-	grid-template-columns: repeat(auto, 276 px);
+	grid-template-columns: 1fr;
 	gap: 32px;
+}
+
+@media (min-width: 768px) {
+	.carList {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (min-width: 1232px) {
+	.carList {
+		grid-template-columns: repeat(4, 276px);
+		justify-content: center;
+	}
 }

@@ -86,7 +86,11 @@ const CatalogSearchTools: FC = () => {
 								</div>
 							</label>
 						</div>
-						<ActionButton className='searchButton' title='Search' />
+						<ActionButton
+							className='searchButton'
+							title='Search'
+							type='submit'
+						/>
 					</Form>
 				)}
 			</Formik>

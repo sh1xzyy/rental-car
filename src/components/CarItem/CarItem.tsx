@@ -1,3 +1,4 @@
+import { useLocation } from 'react-router-dom'
 import { type FC } from 'react'
 import s from './CarItem.module.css'
 import { favoriteIconColorChange } from '../../utils/carItem/favoriteIconColorChange'
@@ -5,8 +6,9 @@ import { useFavoriteLocalStorage } from '../../hooks/useFavoriteLocaleStorage'
 import { selectingAddress } from '../../utils/carItem/selectingAddress'
 import { milagePrettier } from '../../utils/carItem/mileagePrettier'
 import type { CarProps } from '../../interfaces/CatalogPage/Car/Car'
+import NavigationButton from '../NavigationButton/NavigationButton'
 import { typePrettier } from '../../utils/carItem/typePrettier'
-import MainButton from '../NavigationButton/NavigationButton'
+import ActionButton from '../ActionButton/ActionButton'
 
 const CarItem: FC<CarProps> = ({
 	car: {
@@ -24,15 +26,16 @@ const CarItem: FC<CarProps> = ({
 	},
 }) => {
 	const { isFavorite, toggleFavorite } = useFavoriteLocalStorage(id)
+	const location = useLocation()
 
 	return (
 		<li className={s.carItem}>
 			<div className={s.imgWrapper}>
 				<img className={s.img} src={img} alt={description} loading='lazy' />
-				<button
-					className={s.favoriteButton}
+				<ActionButton
+					className='favoriteButton'
 					type='button'
-					onClick={toggleFavorite}
+					event={toggleFavorite}
 				>
 					<svg
 						className={favoriteIconColorChange(s, isFavorite)}
@@ -41,7 +44,7 @@ const CarItem: FC<CarProps> = ({
 					>
 						<use href='/icons/icons.svg#icon-heart'></use>
 					</svg>
-				</button>
+				</ActionButton>
 			</div>
 			<div className={s.headerWrapper}>
 				<h3 className={s.title}>
@@ -56,8 +59,9 @@ const CarItem: FC<CarProps> = ({
 				<span>{typePrettier(type)}</span>
 				<span>{milagePrettier(mileage)} km</span>
 			</div>
-			<MainButton
+			<NavigationButton
 				to={`/catalog/${id}`}
+				state={{ from: location }}
 				title='Read More'
 				className='readButton'
 			/>

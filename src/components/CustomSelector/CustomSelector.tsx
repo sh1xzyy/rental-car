@@ -3,12 +3,13 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useEffect, type FC } from 'react'
 import toast from 'react-hot-toast'
 import type { CustomSelectorProps } from '../../interfaces/CatalogPage/CustomSelector/CustomSelectorProps'
+import { formatOptionLabel } from '../../utils/selector/formatOptionLabel'
 import DropdownIndicator from '../DropDownIndicator/DropDownIndicator'
 import { customStyles } from '../../utils/selector/customStyles'
 import { selectCarBrands } from '../../redux/cars/selector'
+import { getBrandThunk } from '../../redux/cars/options'
 import { price } from '../../utils/selector/priceOption'
 import type { AppDispatch } from '../../redux/store'
-import { getBrandThunk } from '../../redux/cars/options'
 
 const CustomSelector: FC<CustomSelectorProps> = ({
 	placeholder,
@@ -47,6 +48,9 @@ const CustomSelector: FC<CustomSelectorProps> = ({
 		<Select
 			options={options}
 			value={selectedOption}
+			formatOptionLabel={(option, context) =>
+				formatOptionLabel(option, context, name)
+			}
 			styles={{
 				...customStyles,
 				control: (provided, state) => ({

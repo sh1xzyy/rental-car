@@ -5,6 +5,7 @@ const CatalogPage = lazy(() => import('../../pages/CatalogPage/CatalogPage'))
 const DetailsPage = lazy(() => import('../../pages/DetailsPage/DetailsPage'))
 import Loader from '../Loader/Loader'
 import Layout from '../Layout/Layout'
+import NotFoundPage from '../../pages/NotFoundPage/NotFoundPage'
 
 function App() {
 	return (
@@ -15,7 +16,7 @@ function App() {
 					<Route path='/' element={<HomePage />} />
 					<Route path='/catalog' element={<CatalogPage />} />
 					<Route path='/catalog/:id' element={<DetailsPage />} />
-					<Route path='*' element={<DetailsPage />} />
+					<Route path='*' element={<NotFoundPage />} />
 				</Routes>
 			</Suspense>
 		</>

@@ -1,8 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { useEffect, type FC } from 'react'
-import { useParams } from 'react-router-dom'
+import { FaArrowLeftLong } from 'react-icons/fa6'
+import { useEffect, useRef, type FC } from 'react'
+import { useLocation, useParams } from 'react-router-dom'
 import toast from 'react-hot-toast'
 import CarSpecifications from '../../components/CarSpecifications/CarSpecifications'
+import NavigationButton from '../../components/NavigationButton/NavigationButton'
 import { selectCarDetails, selectIsLoading } from '../../redux/cars/selector'
 import DetailsForm from '../../components/DetailsForm/DetailsForm'
 import { getCarDetailsByIdThunk } from '../../redux/cars/options'
@@ -19,6 +21,8 @@ const DetailsPage: FC = () => {
 	const dispatch: AppDispatch = useDispatch()
 	const carDetails = useSelector(selectCarDetails)
 	const isLoading = useSelector(selectIsLoading)
+	const location = useLocation()
+	const backLink = useRef(location.state?.from ?? '/catalog')
 	const { id } = useParams()
 
 	useEffect(() => {
@@ -37,32 +41,33 @@ const DetailsPage: FC = () => {
 	}
 
 	return (
-		<>
-			<Section className='detailsPageSection'>
-				<Container>
-					<div className={s.detailsWrapper}>
-						<div className={s.leftSide}>
-							<CarImage carDetails={carDetails} />
-							<DetailsForm />
-						</div>
-						<div className={s.rightSide}>
-							<CarDetails carDetails={carDetails} />
-							<div className={s.infoWrapper}>
-								<CarInfo
-									title='Rental Conditions:'
-									list={carDetails?.rentalConditions}
-								/>
-								<CarSpecifications carDetails={carDetails} />
-								<CarInfo
-									title='Accessories and functionalities:'
-									list={carDetails?.functionalities}
-								/>
-							</div>
+		<Section className='detailsPageSection'>
+			<Container>
+				<NavigationButton to={backLink.current} className='goBackButton'>
+					<FaArrowLeftLong color='#ffffff' size={16} />
+				</NavigationButton>
+				<div className={s.detailsWrapper}>
+					<div className={s.leftSide}>
+						<CarImage carDetails={carDetails} />
+						<DetailsForm />
+					</div>
+					<div className={s.rightSide}>
+						<CarDetails carDetails={carDetails} />
+						<div className={s.infoWrapper}>
+							<CarInfo
+								title='Rental Conditions:'
+								list={carDetails?.rentalConditions}
+							/>
+							<CarSpecifications carDetails={carDetails} />
+							<CarInfo
+								title='Accessories and functionalities:'
+								list={carDetails?.functionalities}
+							/>
 						</div>
 					</div>
-				</Container>
-			</Section>
-		</>
+				</div>
+			</Container>
+		</Section>
 	)
 }
 

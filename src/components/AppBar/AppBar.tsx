@@ -1,13 +1,10 @@
 import { Link, NavLink } from 'react-router-dom'
 import type { FC } from 'react'
-import clsx from 'clsx'
+import { setActive } from '../../utils/appBar/setActiveColor'
 import Container from '../Container/Container'
 import s from './AppBar.module.css'
 
 const AppBar: FC = () => {
-	const setActive = ({ isActive }: { isActive: boolean }) =>
-		clsx(s.navLink, isActive && s.active)
-
 	return (
 		<header className={s.header}>
 			<Container>
@@ -17,12 +14,20 @@ const AppBar: FC = () => {
 					</Link>
 					<ul className={s.navList}>
 						<li className={s.navItem}>
-							<NavLink className={setActive} to='/'>
+							<NavLink
+								className={isActive => setActive(isActive, s)}
+								to='/'
+								end
+							>
 								Home
 							</NavLink>
 						</li>
 						<li className={s.navItem}>
-							<NavLink className={setActive} to='/catalog'>
+							<NavLink
+								className={isActive => setActive(isActive, s)}
+								to='/catalog'
+								end
+							>
 								Catalog
 							</NavLink>
 						</li>

@@ -1,13 +1,13 @@
 .searchForm {
 	display: flex;
-	align-items: flex-end;
-	justify-content: center;
-	column-gap: 16px;
+	flex-direction: column;
+	gap: 35px;
 }
 
 .fieldsWrapper {
-	display: flex;
-	column-gap: 16px;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 16px;
 }
 
 .fieldLabel {
@@ -19,12 +19,14 @@
 	margin-bottom: 8px;
 }
 
-.fieldWrapper {
-	position: relative;
-}
-
 .rangeFieldsWrapper {
 	display: flex;
+	flex-direction: column;
+	row-gap: 16px;
+}
+
+.fieldWrapper {
+	position: relative;
 }
 
 .fieldPrefix {
@@ -37,4 +39,29 @@
 	left: 24px;
 	top: 50%;
 	transform: translateY(-50%);
+}
+
+@media (min-width: 768px) {
+	.searchForm {
+		flex-direction: row;
+		justify-content: center;
+		gap: 35px;
+		flex-wrap: wrap;
+	}
+
+	.fieldsWrapper {
+		display: flex;
+		gap: 16px;
+	}
+
+	.rangeFieldsWrapper {
+		flex-direction: row;
+	}
+}
+
+@media (min-width: 1232px) {
+	.searchForm {
+		align-items: flex-end;
+		gap: 16px;
+	}
 }

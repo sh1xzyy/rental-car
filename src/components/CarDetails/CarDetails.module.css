@@ -2,25 +2,35 @@
 	margin-bottom: 68px;
 }
 
+.basicInfoWrapper {
+	display: inline-flex;
+	align-items: center;
+	column-gap: 16px;
+	margin-bottom: 8px;
+}
+
 .title {
-	display: block;
 	font-weight: 600;
 	font-size: 24px;
 	line-height: 1.33;
 	color: #101828;
-	margin-bottom: 8px;
+}
+
+.id {
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 1.25;
+	color: #8d929a;
 }
 
 .infoWrapper {
+	display: inline-flex;
+	column-gap: 16px;
 	font-weight: 500;
 	font-size: 16px;
 	line-height: 1.25;
 	color: #101828;
 	margin-bottom: 16px;
-}
-
-.location {
-	margin-right: 16px;
 }
 
 .price {

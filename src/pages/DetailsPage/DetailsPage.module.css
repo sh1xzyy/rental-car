@@ -1,7 +1,7 @@
 .detailsWrapper {
 	display: grid;
-	grid-template-columns: 640px 488px;
-	column-gap: 72px;
+	grid-template-columns: 1fr;
+	gap: 72px;
 }
 
 .leftSide {
@@ -13,5 +13,20 @@
 .infoWrapper {
 	display: flex;
 	flex-direction: column;
-	row-gap: 110px;
+	row-gap: 50px;
+}
+
+@media screen and (min-width: 1232px) {
+	.detailsWrapper {
+		grid-template-columns: 640px 488px;
+		gap: 72px;
+	}
+
+	.leftSide {
+		row-gap: 40px;
+	}
+
+	.infoWrapper {
+		row-gap: 110px;
+	}
 }

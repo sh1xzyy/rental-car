@@ -19,7 +19,9 @@ const FormField: FC<FormFieldProps> = ({
 
 	return (
 		<>
-			<label htmlFor={fieldId}></label>
+			<label htmlFor={fieldId} className='visually-hidden'>
+				{placeholder}
+			</label>
 			<Field
 				className={s[className]}
 				as={as}

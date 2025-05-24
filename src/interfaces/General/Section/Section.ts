@@ -1,4 +1,4 @@
 export interface SectionProps {
-	children: React.ReactElement
+	children: React.ReactNode
 	className: string
 }

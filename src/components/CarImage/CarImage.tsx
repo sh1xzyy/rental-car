@@ -4,9 +4,7 @@ import type { CarDetailsProps } from '../../interfaces/DetailsPage/CarDetailsPro
 
 const CarImage: FC<CarDetailsProps> = ({ carDetails }) => {
 	if (!carDetails) return null
-
 	const { img, description } = carDetails
-
 	return <img className={s.img} src={img} alt={description} loading='lazy' />
 }
 

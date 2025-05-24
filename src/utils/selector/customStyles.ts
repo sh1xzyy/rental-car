@@ -6,10 +6,20 @@ export const customStyles: StylesConfig<Option> = {
 		...provided,
 		cursor: 'pointer',
 		height: '44px',
-		paddingLeft: '16px',
+		paddingLeft: '8px',
 		border: 'none',
 		borderRadius: '12px',
 		backgroundColor: ' #f7f7f7',
+		'@media screen and (max-width: 767px)': {
+			width: '100%',
+		},
+	}),
+	singleValue: provided => ({
+		...provided,
+		fontWeight: 500,
+		fontSize: '16px',
+		lineHeight: 1.25,
+		color: '#101828',
 	}),
 	option: (provided, state) => ({
 		...provided,
